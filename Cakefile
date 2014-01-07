@@ -65,7 +65,7 @@ task 'dist', 'Build a distribution', ->
         throw err if err
         fs.unlink 'dist/_swagger-ui.coffee'
         console.log '   : Combining with javascript...'
-        exec 'cat src/main/javascript/doc.js dist/_swagger-ui-templates.js dist/_swagger-ui.js > dist/swagger-ui.js', (err, stdout, stderr) ->
+        exec 'cat src/main/javascript/console-shim.js src/main/javascript/doc.js dist/_swagger-ui-templates.js dist/_swagger-ui.js > dist/swagger-ui.js', (err, stdout, stderr) ->
           throw err if err
           fs.unlink 'dist/_swagger-ui.js'
           fs.unlink 'dist/_swagger-ui-templates.js'
